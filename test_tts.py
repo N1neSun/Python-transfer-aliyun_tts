@@ -11,7 +11,7 @@ def tts(name,text,voice):
     os.system(exist)
 
 
-if __name__=='__main__'
+if __name__=='__main__'：
     os.makedirs('wavdir')
     for part in os.listdir('./txt'):
         os.makedirs('wavdir'+'/'+part)
