@@ -25,6 +25,8 @@ if __name__=='__main__'：
                     p.apply_async(tts,args=(wavpart+'/'+name[0]+'_0.wav',filepart+'/'+txt,'xiaoyun',))
                 else:
                     p.apply_async(tts,args=(wavpart+'/'+name[0]+'_1.wav',filepart+'/'+txt,'xiaogang',))
+            p.close()
+            p.join()
         print('endtime:%s\n' % time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
             #tts(wavpart+'/'+name[0]+'_0.wav',filepart+'/'+txt,'xiaoyun')
             #tts(wavpart+'/'+name[0]+'_1.wav',filepart+'/'+txt,'xiaogang')
