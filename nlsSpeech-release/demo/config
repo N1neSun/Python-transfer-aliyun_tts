@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -f libopus.so.0 ]; then
+    rm -rf libopus.so.0
+fi
+ln -s libopus.so libopus.so.0
+# compile realtime
+g++ -o realtime-demo realtime-demo.cpp -pthread -I ./ -L. -ldl -lopus -lrealTimeUnity -lssl -lcrypto
+g++ -o asr-demo asr-demo.cpp -pthread -I ./ -L. -ldl -lopus -lrealTimeUnity -lssl -lcrypto
+g++ -o tts-demo tts-demo.cpp -pthread -I ./ -L. -ldl -lopus -lrealTimeUnity -lssl -lcrypto
+g++ -o nlu-demo nlu-demo.cpp -pthread -I ./ -L. -ldl -lopus -lrealTimeUnity -lssl -lcrypto
+export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH

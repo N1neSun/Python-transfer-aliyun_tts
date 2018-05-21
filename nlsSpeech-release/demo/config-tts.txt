@@ -1,0 +1,22 @@
+#注意：
+#1. 以#开头的行为注释，处理时会直接跳过该行。
+#2. 配置中每行只能出现一条配置且以key:value的形式出现，切忌中间、行头、行尾不要出现空格，除非key, value字段中本身含有空格
+Url:wss://nls.dataapi.aliyun.com:443
+AppKey:nls-service
+#Language:EN/CHN
+TtsEnable:true
+TtsEncodeType:wav
+TtsVolume:100
+TtsNus:0
+TtsVoice:xiaoyun
+TtsSpeechRate:0
+BackgroundMusicId:1
+BackgroundMusicOffset:0
+BstreamAttached:false
+#TtsTimeLable:
+#TtsReference:
+#TtsPitchRate:
+#TtsSampleRate:
+#文件编码方式
+#FileEncoding:UTF-8
+TtsReq:人民公园不但风景美丽，而且还给我们带来了无穷的乐趣。

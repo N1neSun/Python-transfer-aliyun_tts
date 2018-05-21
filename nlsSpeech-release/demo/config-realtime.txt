@@ -1,0 +1,15 @@
+#注意：
+#1. 以#开头的行为注释，处理时会直接跳过该行。
+#2. 配置中每行只能出现一条配置且以key:value的形式出现，切忌中间、行头、行尾不要出现空格，除非key, value字段中本身含有空格
+Url:wss://nls-trans.dataapi.aliyun.com:443/realtime
+AppKey:nls-service-shurufa16khz
+SampleRate:16000
+VocabId:
+ResponseMode:normal
+#KeyWordListId:fd4b8ce1916841ce823da1f31dc345af
+Format:opu
+#PersonId:test_vocab
+#AddressId:
+#OutputFormat:GBK
+#TimeOut:
+#MaxEndSilence:900
