@@ -3,7 +3,6 @@
 import commands
 import os
 import datetime
-import shutil
 from multiprocessing import Pool
 
 def tts(name,text,voice):
@@ -23,16 +22,14 @@ def filepath(txtpath,wavpath):
         p.close()
         p.join()
 
+def makedirs(file_name):
+    os.makedirs('wavdir'+'/'+file_name)
+    filepart='./txt'+'/'+file_name
+    wavpart=filepart.replace('./txt','wavdir')
+    return filepart,wavpart
+
 def init(txt_name):
-    file_1=txt_name.pop()
-    file_2=txt_name.pop()
-    os.makedirs('wavdir'+'/'+file_1)
-    os.makedirs('wavdir'+'/'+file_2)
-    filepart_1='./txt'+'/'+file_1
-    filepart_2='./txt'+'/'+file_2
-    wavpart_1=filepart_1.replace('./txt','wavdir')
-    wavpart_2=filepart_2.replace('./txt','wavdir')
-    return filepart_1,filepart_2,wavpart_1,wavpart_2
+    return makedirs(txt_name.pop())
 
 
 if __name__=='__main__':
@@ -42,14 +39,14 @@ if __name__=='__main__':
     os.makedirs('wavdir')
     txtname=os.listdir('./txt')
     while txtname:
-        filepart_1,filepart_2,wavpart_1,wavpart_2=init(txtname)
+        filepart_1,wavpart_1=init(txtname)
         pid=os.fork()
         if pid == 0:
             filepath(filepart_1,wavpart_1)
         else:
+            filepart_2,wavpart_2=init(txtname)
             filepath(filepart_2,wavpart_2)
     end=datetime.datetime.now()
-    print(end-start)
-            #tts(wavpart+'/'+name[0]+'_0.wav',filepart+'/'+txt,'xiaoyun')
-            #tts(wavpart+'/'+name[0]+'_1.wav',filepart+'/'+txt,'xiaogang')
-
+    print('\ntotaltime:%s\n' % (end-start))
+    #tts(wavpart+'/'+name[0]+'_0.wav',filepart+'/'+txt,'xiaoyun')
+    #tts(wavpart+'/'+name[0]+'_1.wav',filepart+'/'+txt,'xiaogang')
