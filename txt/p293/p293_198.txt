@@ -1,0 +1,1 @@
+It ignores the future.

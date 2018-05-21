@@ -1,0 +1,1 @@
+It shows the right amount of progress.
