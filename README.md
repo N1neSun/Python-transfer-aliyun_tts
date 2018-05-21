@@ -10,4 +10,4 @@ How to use it?<br>
 6.use `g++ -o main tts-demo.cpp -pthread -I ./ -L. -lrealTimeUnity -lopus -lssl -lcrypto -ldl` to Compiled<br>
 7.make sure the file of main and test_tts.py are in the same folder<br>
 8.then execute "python test_tts.py",program will read txt file's data and convert to audio(format is wav)<br>
-9.program will execute in multiproces<br>
+9.program will execute in multiprocess<br>
